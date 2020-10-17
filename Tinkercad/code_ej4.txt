@@ -1,0 +1,20 @@
+float led=0;
+float pot =0;
+float norm;
+
+void setup()
+{
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  pot=analogRead(0);
+  norm= pot/1023;
+  led=norm*255;
+  
+  analogWrite(3,led);
+  //Serial.println(pot);   //Se imprime el valor obtenido por el potenciometro
+  //Serial.println("led");   
+  //Serial.println(led);	 //Se impime el valor equivalente a	la intensidad del led
+}
